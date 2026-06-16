@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Add Student</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body{
+            background:#f4f6f9;
+        }
+
+        .card{
+            border:none;
+            border-radius:20px;
+        }
+        body{
+        overflow:hidden;
+        background:#f4f6f9;
+}
+
+.form-control{
+    border-radius:12px;
+}
+
+.btn{
+    border-radius:12px;
+}
+
+.home-btn {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #cbd5e1;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid vh-100">
+
+    <div class="row h-100">
+
+
+        <!-- LEFT SIDE -->
+        <div class="col-md-5 d-flex flex-column justify-content-center align-items-center text-white"
+             style="background: linear-gradient(135deg,#2563eb,#1e3a8a);">
+
+            <h1 class="display-4">🎓</h1>
+
+            <h2 class="fw-bold mt-3">
+                Student Management
+            </h2>
+
+            <p class="text-center mt-3 px-5">
+                Add and manage students efficiently through your modern dashboard.
+            </p>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-md-7 d-flex align-items-center justify-content-center">
+
+            <div class="card shadow-lg border-0 p-5"
+                 style="width:500px; border-radius:25px;">
+
+                 <a href="/" class="btn btn-outline-primary mb-3">
+    ← Back to Home
+</a>
+
+                <h2 class="mb-4 fw-bold">
+                    Add Student
+                </h2>
+
+                <form method="POST">
+
+                    <div class="mb-3">
+
+                        <label class="form-label">
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control form-control-lg"
+                            placeholder="Enter student name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            name="age"
+                            class="form-control form-control-lg"
+                            placeholder="Enter age"
+                            required
+                        >
+
+                    </div>
+
+                    <button class="btn btn-primary btn-lg w-100">
+                        ➕ Add Student
+                    </button>
+
+                    <a href="/view_students"
+                       class="btn btn-outline-secondary w-100 mt-3">
+                       ← Back
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% extends "base.html" %}
+
+{% block title %}Add Student{% endblock %}
+
+{% block content %}
+
+<div class="card p-4 shadow">
+    <h2>Add Student</h2>
+
+    <form method="POST">
+        <input name="name" class="form-control mb-2" placeholder="Name">
+        <input name="age" class="form-control mb-3" placeholder="Age">
+
+        <button class="btn btn-primary w-100">
+            Add Student
+        </button>
+    </form>
+</div>
+
+{% endblock %}
+</body>
+</html>
